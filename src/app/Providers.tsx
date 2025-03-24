@@ -1,3 +1,4 @@
+import ProductListContextProvider from "@/contexts/product-list-context";
 import StoreProvider from "@/state/redux";
 
 function Providers({
@@ -5,6 +6,10 @@ function Providers({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return <StoreProvider>{children}</StoreProvider>;
+	return (
+		<StoreProvider>
+			<ProductListContextProvider>{children}</ProductListContextProvider>
+		</StoreProvider>
+	);
 }
 export default Providers;
