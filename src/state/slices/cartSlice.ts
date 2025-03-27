@@ -11,28 +11,9 @@ interface InitialStateType {
 
 export const initialState: InitialStateType = {
 	isCartOpen: false,
-	cartItems: [
-		{
-			id: "P001",
-			name: "Snake Plant",
-			imgUrl:
-				"https://cdn.pixabay.com/photo/2021/01/22/06/04/snake-plant-5939187_1280.jpg",
-			description: "Produces oxygen at night, improving air quality.",
-			cost: 15,
-			quantity: 1,
-		},
-		{
-			id: "P002",
-			name: "Spider Plant",
-			imgUrl:
-				"https://cdn.pixabay.com/photo/2018/07/11/06/47/chlorophytum-3530413_1280.jpg",
-			description: "Filters formaldehyde and xylene from the air.",
-			cost: 12,
-			quantity: 10,
-		},
-	],
-	totalNumOfCartItems: 11,
-	totalCost: 135,
+	cartItems: [],
+	totalNumOfCartItems: 0,
+	totalCost: 0,
 };
 
 export const cartSlice = createSlice({

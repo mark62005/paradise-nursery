@@ -24,7 +24,7 @@ export default function ProductListContextProvider({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const [isProductListOpen, setIsProductListOpen] = useState<boolean>(true);
+	const [isProductListOpen, setIsProductListOpen] = useState<boolean>(false);
 	const [cartItemIdsMap, setCartItemIdsMap] = useState<Map<string, boolean>>(
 		new Map()
 	);

@@ -14,7 +14,7 @@ function ProductListSection() {
 		<MaxWidthWrapper
 			className={cn(
 				"mt-15",
-				isCartOpen ? "h-[60vh] overflow-hidden" : "overflow-y-auto"
+				isCartOpen ? "h-[80vh] overflow-hidden" : "overflow-y-auto"
 			)}
 		>
 			{plants.map((category) => (
