@@ -5,20 +5,19 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import globalReducer from "@/state/slices/globalSlice";
-import { api } from "@/state/api";
+import plantReducer from "@/state/slices/plantSlice";
+import cartReducer from "@/state/slices/cartSlice";
 
 /* REDUX STORE */
 const rootReducer = combineReducers({
-	global: globalReducer,
-	[api.reducerPath]: api.reducer,
+	plant: plantReducer,
+	cart: cartReducer,
 });
 
 export const makeStore = () => {
 	return configureStore({
 		reducer: rootReducer,
-		middleware: (getDefaultMiddleware) =>
-			getDefaultMiddleware().concat(api.middleware),
+		middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 	});
 };
 

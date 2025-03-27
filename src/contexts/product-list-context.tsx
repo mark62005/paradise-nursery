@@ -11,6 +11,8 @@ import {
 interface ProductListContextType {
 	isProductListOpen: boolean;
 	setIsProductListOpen: Dispatch<SetStateAction<boolean>>;
+	cartItemIdsMap: Map<string, boolean>;
+	setCartItemIdsMap: Dispatch<SetStateAction<Map<string, boolean>>>;
 }
 
 export const ProductListContext = createContext<ProductListContextType | null>(
@@ -22,13 +24,18 @@ export default function ProductListContextProvider({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const [isProductListOpen, setIsProductListOpen] = useState<boolean>(false);
+	const [isProductListOpen, setIsProductListOpen] = useState<boolean>(true);
+	const [cartItemIdsMap, setCartItemIdsMap] = useState<Map<string, boolean>>(
+		new Map()
+	);
 
 	return (
 		<ProductListContext.Provider
 			value={{
 				isProductListOpen,
 				setIsProductListOpen,
+				cartItemIdsMap,
+				setCartItemIdsMap,
 			}}
 		>
 			{children}
